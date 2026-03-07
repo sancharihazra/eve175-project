@@ -5,6 +5,16 @@ if [ $# -ne 3 ]; then
     exit 1
 fi
 
+#command line arguments to variables
+directory=$1
+extension=$2
+pattern=$3
+
+#inital count 
+files_scanned=0
+files_with_matches=0
+total_matches=0
+
 
 #checks if the directory exists
 if [ ! -d "$directory" ]; then
@@ -14,8 +24,8 @@ fi
 
 
 echo "=== Match Counts ==="
-for file in $directory/*$extenstion
-	if [-f $file]; then
+for file in "$directory"/*"$extenstion"
+	if [-f "$file"]; then
 		files_scanned =$((files_scanned+1))
 		count=$(grep -c "$pattern" "$file")
 		if [ $count -gt 0 ]; then
