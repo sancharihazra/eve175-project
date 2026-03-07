@@ -24,12 +24,13 @@ fi
 
 
 echo "=== Match Counts ==="
-for file in "$directory"/*"$extenstion"
-	if [-f "$file"]; then
-		files_scanned =$((files_scanned+1))
+for file in "$directory"/*"$extension"
+do
+	if [ -f "$file" ]; then
+		files_scanned=$((files_scanned+1))
 		count=$(grep -c "$pattern" "$file")
 		if [ $count -gt 0 ]; then
-			echo "$( "$file"): $count"
+			echo " "$file": $count"
 			files_with_matches=$((files_with_matches+1))
            		total_matches=$((total_matches+count))
 		fi
@@ -40,9 +41,9 @@ done
 echo "=== Matching Lines ==="
 for file in "$directory"/*"$extension"
 do
-	if [-f "$file" ]; then
+	if [ -f "$file" ]; then
 		if grep -q "$pattern" "$file"; then
-			echo "---$($file) ---"
+			echo "---$("$file") ---"
 			grep "$pattern" "$file"
 		fi
 	fi
