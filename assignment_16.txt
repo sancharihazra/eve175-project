@@ -1,0 +1,64 @@
+Multi-File Search and Summary
+================================================================================
+
+SCRIPT PURPOSE AND REQUIRED FEATURES
+-------------------------------------
+Write a bash script called search_files.sh that searches for a pattern across
+multiple files in a directory and produces a summary report. The script should:
+
+- Accept three arguments: a directory path, a file extension (e.g., .txt, .vcf,
+  .fa), and a search pattern (a grep-compatible regular expression)
+- Find all files in the directory (non-recursively) with the given extension
+- Search each file for lines matching the pattern
+- For each file with matches, print the filename and the number of matching
+  lines
+- Print the matching lines grouped by file, with the filename as a header
+- Print a summary: total files scanned, files with matches, total matching
+  lines
+- Exit with an error message if arguments are missing or the directory does
+  not exist
+
+EXPECTED INPUT AND OUTPUT
+--------------------------
+Input: A directory, a file extension, and a search pattern.
+
+Output: Per-file match counts, matching lines, and summary.
+
+EXAMPLE
+-------
+Given a directory project/ containing:
+
+  notes.txt (contains "TODO: fix parser" and "TODO: add tests")
+  readme.txt (contains no TODOs)
+  log.txt (contains "TODO: check output")
+
+Running:
+  ./search_files.sh project/ .txt "TODO"
+
+Expected output:
+  === Match Counts ===
+  notes.txt: 2
+  log.txt: 1
+
+  === Matching Lines ===
+  --- notes.txt ---
+  TODO: fix parser
+  TODO: add tests
+  --- log.txt ---
+  TODO: check output
+
+  === Summary ===
+  Files scanned: 3
+  Files with matches: 2
+  Total matching lines: 3
+
+SUBMISSION INSTRUCTIONS
+------------------------
+1. Create a public GitHub repository for this assignment.
+2. The repository should contain:
+   - search_files.sh (the script, executable)
+   - README.md explaining what the script does, how to run it, and any
+     dependencies
+   - test.sh (a test script that creates sample input, runs search_files.sh,
+     and checks the output against expected results, reporting pass or fail)
+3. Submit the HTTPS URL of your GitHub repository.
