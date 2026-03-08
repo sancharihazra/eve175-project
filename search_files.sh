@@ -1,7 +1,8 @@
+##!/bin/bash
+
 # checks is user has 3 arguments
 if [ $# -ne 3 ]; then
     echo "Error: Missing arguments"
-    echo "Usage: ./search_files.sh DIRECTORY EXTENSION PATTERN"
     exit 1
 fi
 
@@ -37,7 +38,7 @@ do
 	fi
 done
 
-#print outputs:
+
 echo "=== Matching Lines ==="
 for file in "$directory"/*"$extension"
 do
