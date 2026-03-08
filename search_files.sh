@@ -30,7 +30,7 @@ do
 		files_scanned=$((files_scanned+1))
 		count=$(grep -c "$pattern" "$file")
 		if [ $count -gt 0 ]; then
-			echo " "$file": $count"
+			echo "$(basename "$file"): $count"
 			files_with_matches=$((files_with_matches+1))
            		total_matches=$((total_matches+count))
 		fi
@@ -43,7 +43,7 @@ for file in "$directory"/*"$extension"
 do
 	if [ -f "$file" ]; then
 		if grep -q "$pattern" "$file"; then
-			echo "---$("$file") ---"
+			echo "---$(basename "$file") ---"
 			grep "$pattern" "$file"
 		fi
 	fi
