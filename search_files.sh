@@ -3,6 +3,7 @@
 # checks is user has 3 arguments
 if [ $# -ne 3 ]; then
     echo "Error: Missing arguments"
+    echo "Use argument ./search_files.sh directory extension 'pattern'" 
     exit 1
 fi
 
