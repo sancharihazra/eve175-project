@@ -33,3 +33,10 @@ The tests verify:
 
 ## Running the test file
 bash test.sh
+
+## AI Assistance
+AI tools (Claude) were used to help with parts of this project:
+- Formatting and organizing the README file
+- Debugging syntax errors in the Bash script
+
+ All codes was reviewed, tested, and understood before submission.
