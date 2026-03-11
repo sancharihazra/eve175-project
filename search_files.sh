@@ -1,4 +1,4 @@
-##!/bin/bash
+#!/bin/bash
 
 # checks is user has 3 arguments
 if [ $# -ne 3 ]; then
