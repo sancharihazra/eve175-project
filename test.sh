@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#run code and save oytput file
+#run code and save output file
 ./search_files.sh project .txt "TODO" > test_output.txt
 
 #expected  output
